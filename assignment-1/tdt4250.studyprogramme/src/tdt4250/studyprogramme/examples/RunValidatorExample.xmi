@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ra:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ra="platform:/plugin/tdt4250.ra.model/model/ra.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250.ra.model/model/ra.ecore ra.ecore">
+  <courses code="TDT4250"
+      name="Advanced Software Design">
+    <resourceAllocations
+        person="//@staff.0"
+        factor="1.0"/>
+  </courses>
+  <courses code="IT1901"
+      name="Informatics Project 1">
+    <resourceAllocations
+        person="//@staff.1"
+        factor="0.7"/>
+    <resourceAllocations
+        person="//@staff.0"
+        factor="0.3"/>
+  </courses>
+  <staff name="Hallvard Trætteberg"
+      capacity="1.0"
+      resourceAllocations="//@courses.1/@resourceAllocations.1 //@courses.0/@resourceAllocations.0"/>
+  <staff name="George Adrian Stoica"
+      capacity="1.0"
+      resourceAllocations="//@courses.1/@resourceAllocations.0"/>
+</ra:Department>
