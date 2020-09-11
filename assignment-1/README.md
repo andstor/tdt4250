@@ -8,8 +8,8 @@ tdt4250.studyprogramme - Model for study programmes
 
 Study plan with semesters, courses and groups of courses to select among for electives (slots).
 Specializations, i.e. points where students can choose between several possible continuations of their plan.
-Features of Ecore that must be used
 
+**Features of Ecore that must be used:**  
 classes and datatypes (enums are a kind of datatype)
 attributes and references, both ordinary and containment references, oppsites
 constraints (preferably both manually written and with OCL) and derived features
