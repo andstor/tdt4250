@@ -1,6 +1,8 @@
 # Assignment 1
 This is assiginment 1 for the course TDT4250. The task is to create a study programme model.
 
+In the folder `tdt4250.studyprogramme` you will find the `model` folder which contains the ecore model and the generator model. In the same folder, a dynamic instance of the [MIDT](https://www.ntnu.no/studier/midt) studyprogramme at NTNU is available. The `src/studyprogramme` folder contains all the generated code (including manual modifications).
+
 ## Overview
 The system is mainly based on a tree structure for supporting both simple and complex study programmes. The root container is called UOD (Universe of Discourse). This contains all the available courses and programmes.
 
