@@ -3,4 +3,4 @@
 
 ## Assignment 1
 
-Model of study programmes at NTNU.
+Model for study programmes at NTNU.
