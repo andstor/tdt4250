@@ -1,14 +1,14 @@
 # Assignment 1
 This is assiginment 1 for the course TDT4250. The task is to create a study programme model.
 
-In the folder `tdt4250.studyprogramme` you will find the `model` folder which contains the ecore model and the generator model. In the same folder, a dynamic instance of the [MIDT](https://www.ntnu.no/studier/midt) studyprogramme at NTNU is available. The `src/studyprogramme` folder contains all the generated code (including manual written code).
+In the `model` you will find the ecore model and the generator model. In the same folder, a dynamic instance of the [MIDT](https://www.ntnu.no/studier/midt) studyprogramme at NTNU is available. The `src/studyprogramme` folder contains all the generated code (including manual written code).
 
 ## Overview
 The system is mainly based on a tree structure for supporting both simple and complex study programmes. The root container is called UOD (Universe of Discourse). This contains all the available courses and programmes.
 
 A `Programme` mainly contains `academicYears`. An `AcademicYear` entry should be created for every year new students starts on the programme. Further, an `AcademicYear` contains `courseCombinations`. A `CourseCombination` represents a node in a tree structure of the study programme. For example, one might create a `CourseCombination` for each year. A `CourseCombination` may contain other `CourseCombinations`. Hence, these "nodes" plays a vital part in the organization of a programme. A `CourseCombination` can also contain a reference to a `Specialisation`, acting as a specialisation step.
 
-A `CourseCombination` "leaf node" should contain `courseGroups` (constraints are implemented). A `CourseGroup` effectively provide a collection of one or more courses. These groups may be marked as mandatory or elective. Which courses that are available in a course group is determined by a **filtering system**. This makes it possible to provide course requirements in a modular and extendible way. It is implemented with a abstract `Criteria` class. Any class extending this `Criteria` class, providing it's own filter. For example, a course must be at a certain level, and from (or outside) a specific field.
+A `CourseCombination` "leaf node" should contain `courseGroups` (constraints are implemented). A `CourseGroup` effectively provide a collection of one or more courses. These groups may be marked as mandatory or elective. Which courses that are available in a course group is determined by a **filtering system**. This makes it possible to provide course requirements in a modular and extendible way. It is implemented with a abstract `Criteria` class. Any class extending this `Criteria` class, can provide it's own filtering method. For example, that a course must be at a certain level.
 
 ![model UML](assets/ModelUML.png)
 
