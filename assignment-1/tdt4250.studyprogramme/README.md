@@ -10,6 +10,9 @@ A `Programme` mainly contains `academicYears`. An `AcademicYear` entry should be
 
 A `CourseCombination` "leaf node" should contain `courseGroups` (constraints are implemented). A `CourseGroup` effectively provide a collection of one or more courses. These groups may be marked as mandatory or elective. Which courses that are available in a course group is determined by a **filtering system**. This makes it possible to provide course requirements in a modular and extendible way. It is implemented with a abstract `Criteria` class. Any class extending this `Criteria` class, providing it's own filter. For example, a course must be at a certain level, and from (or outside) a specific field.
 
+![model UML](assets/ModelUML.png)
+
+
 ## Constraints
 | Constraint | Type | Description |
 | ---------- | ---- | ----------- |
