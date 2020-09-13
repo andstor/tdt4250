@@ -16,7 +16,7 @@ A `CourseCombination` "leaf node" should contain `courseGroups` (constraints are
 ## Constraints
 | Constraint | Type | Description |
 | ---------- | ---- | ----------- |
-| programmesMustHaveUniqueCode | OCL | Ensures that a `Programme` has a unique course code.|
+| programmesMustHaveUniqueCode | OCL | Ensures that a `Programme` has a unique code.|
 | hasEnoughCredits | manual | Ensures that the `AcademicYear` contains (indirectly) at least enough courses to cover the study programme credit requirement. |
 | containsEitherCourseCombinationsOrCourseGroups | OCL | A `CourseCombination` can only either contain several `CourseCombination` or multiple `CourseCourseGroups`. |
 | minimumOneCoursePresent | manual | A valid `CourseGroup` must (indirectly) contain at least one course. |
