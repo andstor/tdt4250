@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tdt4250.studyprogramme.CourseCombination#getName <em>Name</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.CourseCombination#getSpecialisation <em>Specialisation</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.CourseCombination#getCreditsRequirement <em>Credits Requirement</em>}</li>
+ *   <li>{@link tdt4250.studyprogramme.CourseCombination#getFromTerm <em>From Term</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.CourseCombination#getCourseCombinations <em>Course Combinations</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.CourseCombination#getCourseGroups <em>Course Groups</em>}</li>
  * </ul>
@@ -117,5 +118,27 @@ public interface CourseCombination extends EObject {
 	 * @generated
 	 */
 	void setCreditsRequirement(double value);
+
+	/**
+	 * Returns the value of the '<em><b>From Term</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Term</em>' attribute.
+	 * @see #setFromTerm(int)
+	 * @see tdt4250.studyprogramme.StudyprogrammePackage#getCourseCombination_FromTerm()
+	 * @model
+	 * @generated
+	 */
+	int getFromTerm();
+
+	/**
+	 * Sets the value of the '{@link tdt4250.studyprogramme.CourseCombination#getFromTerm <em>From Term</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Term</em>' attribute.
+	 * @see #getFromTerm()
+	 * @generated
+	 */
+	void setFromTerm(int value);
 
 } // CourseCombination

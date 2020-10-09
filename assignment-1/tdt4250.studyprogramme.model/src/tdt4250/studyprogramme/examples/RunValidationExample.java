@@ -29,7 +29,7 @@ import tdt4250.studyprogramme.UOD;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RunValidation {
+public class RunValidationExample {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.

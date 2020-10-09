@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import tdt4250.studyprogramme.Course;
 import tdt4250.studyprogramme.CourseCriterion;
 import tdt4250.studyprogramme.CourseLevel;

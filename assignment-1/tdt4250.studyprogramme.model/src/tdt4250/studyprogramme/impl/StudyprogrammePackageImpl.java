@@ -27,7 +27,6 @@ import tdt4250.studyprogramme.Season;
 import tdt4250.studyprogramme.Specialisation;
 import tdt4250.studyprogramme.StudyprogrammeFactory;
 import tdt4250.studyprogramme.StudyprogrammePackage;
-
 import tdt4250.studyprogramme.util.StudyprogrammeValidator;
 
 /**
@@ -540,7 +539,7 @@ public class StudyprogrammePackageImpl extends EPackageImpl implements Studyprog
 	 */
 	@Override
 	public EReference getCourseCombination_CourseGroups() {
-		return (EReference)courseCombinationEClass.getEStructuralFeatures().get(4);
+		return (EReference)courseCombinationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -560,7 +559,7 @@ public class StudyprogrammePackageImpl extends EPackageImpl implements Studyprog
 	 */
 	@Override
 	public EReference getCourseCombination_CourseCombinations() {
-		return (EReference)courseCombinationEClass.getEStructuralFeatures().get(3);
+		return (EReference)courseCombinationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -571,6 +570,16 @@ public class StudyprogrammePackageImpl extends EPackageImpl implements Studyprog
 	@Override
 	public EAttribute getCourseCombination_CreditsRequirement() {
 		return (EAttribute)courseCombinationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCourseCombination_FromTerm() {
+		return (EAttribute)courseCombinationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -771,6 +780,7 @@ public class StudyprogrammePackageImpl extends EPackageImpl implements Studyprog
 		createEAttribute(courseCombinationEClass, COURSE_COMBINATION__NAME);
 		createEReference(courseCombinationEClass, COURSE_COMBINATION__SPECIALISATION);
 		createEAttribute(courseCombinationEClass, COURSE_COMBINATION__CREDITS_REQUIREMENT);
+		createEAttribute(courseCombinationEClass, COURSE_COMBINATION__FROM_TERM);
 		createEReference(courseCombinationEClass, COURSE_COMBINATION__COURSE_COMBINATIONS);
 		createEReference(courseCombinationEClass, COURSE_COMBINATION__COURSE_GROUPS);
 
@@ -868,6 +878,7 @@ public class StudyprogrammePackageImpl extends EPackageImpl implements Studyprog
 		initEAttribute(getCourseCombination_Name(), ecorePackage.getEString(), "name", null, 0, 1, CourseCombination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourseCombination_Specialisation(), this.getSpecialisation(), null, "specialisation", null, 0, 1, CourseCombination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourseCombination_CreditsRequirement(), ecorePackage.getEDouble(), "creditsRequirement", null, 0, 1, CourseCombination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourseCombination_FromTerm(), ecorePackage.getEInt(), "fromTerm", null, 0, 1, CourseCombination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourseCombination_CourseCombinations(), this.getCourseCombination(), null, "courseCombinations", null, 0, -1, CourseCombination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourseCombination_CourseGroups(), this.getCourseGroup(), null, "courseGroups", null, 0, -1, CourseCombination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

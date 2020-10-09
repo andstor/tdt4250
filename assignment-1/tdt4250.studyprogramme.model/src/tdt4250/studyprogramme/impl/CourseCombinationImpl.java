@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import tdt4250.studyprogramme.CourseCombination;
 import tdt4250.studyprogramme.CourseGroup;
 import tdt4250.studyprogramme.Specialisation;
@@ -32,6 +33,7 @@ import tdt4250.studyprogramme.StudyprogrammePackage;
  *   <li>{@link tdt4250.studyprogramme.impl.CourseCombinationImpl#getName <em>Name</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.impl.CourseCombinationImpl#getSpecialisation <em>Specialisation</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.impl.CourseCombinationImpl#getCreditsRequirement <em>Credits Requirement</em>}</li>
+ *   <li>{@link tdt4250.studyprogramme.impl.CourseCombinationImpl#getFromTerm <em>From Term</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.impl.CourseCombinationImpl#getCourseCombinations <em>Course Combinations</em>}</li>
  *   <li>{@link tdt4250.studyprogramme.impl.CourseCombinationImpl#getCourseGroups <em>Course Groups</em>}</li>
  * </ul>
@@ -88,6 +90,26 @@ public class CourseCombinationImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected double creditsRequirement = CREDITS_REQUIREMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFromTerm() <em>From Term</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromTerm()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int FROM_TERM_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getFromTerm() <em>From Term</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFromTerm()
+	 * @generated
+	 * @ordered
+	 */
+	protected int fromTerm = FROM_TERM_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCourseCombinations() <em>Course Combinations</em>}' containment reference list.
@@ -246,6 +268,29 @@ public class CourseCombinationImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public int getFromTerm() {
+		return fromTerm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFromTerm(int newFromTerm) {
+		int oldFromTerm = fromTerm;
+		fromTerm = newFromTerm;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyprogrammePackage.COURSE_COMBINATION__FROM_TERM, oldFromTerm, fromTerm));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case StudyprogrammePackage.COURSE_COMBINATION__COURSE_COMBINATIONS:
@@ -271,6 +316,8 @@ public class CourseCombinationImpl extends MinimalEObjectImpl.Container implemen
 				return basicGetSpecialisation();
 			case StudyprogrammePackage.COURSE_COMBINATION__CREDITS_REQUIREMENT:
 				return getCreditsRequirement();
+			case StudyprogrammePackage.COURSE_COMBINATION__FROM_TERM:
+				return getFromTerm();
 			case StudyprogrammePackage.COURSE_COMBINATION__COURSE_COMBINATIONS:
 				return getCourseCombinations();
 			case StudyprogrammePackage.COURSE_COMBINATION__COURSE_GROUPS:
@@ -296,6 +343,9 @@ public class CourseCombinationImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case StudyprogrammePackage.COURSE_COMBINATION__CREDITS_REQUIREMENT:
 				setCreditsRequirement((Double)newValue);
+				return;
+			case StudyprogrammePackage.COURSE_COMBINATION__FROM_TERM:
+				setFromTerm((Integer)newValue);
 				return;
 			case StudyprogrammePackage.COURSE_COMBINATION__COURSE_COMBINATIONS:
 				getCourseCombinations().clear();
@@ -326,6 +376,9 @@ public class CourseCombinationImpl extends MinimalEObjectImpl.Container implemen
 			case StudyprogrammePackage.COURSE_COMBINATION__CREDITS_REQUIREMENT:
 				setCreditsRequirement(CREDITS_REQUIREMENT_EDEFAULT);
 				return;
+			case StudyprogrammePackage.COURSE_COMBINATION__FROM_TERM:
+				setFromTerm(FROM_TERM_EDEFAULT);
+				return;
 			case StudyprogrammePackage.COURSE_COMBINATION__COURSE_COMBINATIONS:
 				getCourseCombinations().clear();
 				return;
@@ -350,6 +403,8 @@ public class CourseCombinationImpl extends MinimalEObjectImpl.Container implemen
 				return specialisation != null;
 			case StudyprogrammePackage.COURSE_COMBINATION__CREDITS_REQUIREMENT:
 				return creditsRequirement != CREDITS_REQUIREMENT_EDEFAULT;
+			case StudyprogrammePackage.COURSE_COMBINATION__FROM_TERM:
+				return fromTerm != FROM_TERM_EDEFAULT;
 			case StudyprogrammePackage.COURSE_COMBINATION__COURSE_COMBINATIONS:
 				return courseCombinations != null && !courseCombinations.isEmpty();
 			case StudyprogrammePackage.COURSE_COMBINATION__COURSE_GROUPS:
@@ -372,6 +427,8 @@ public class CourseCombinationImpl extends MinimalEObjectImpl.Container implemen
 		result.append(name);
 		result.append(", creditsRequirement: ");
 		result.append(creditsRequirement);
+		result.append(", fromTerm: ");
+		result.append(fromTerm);
 		result.append(')');
 		return result.toString();
 	}

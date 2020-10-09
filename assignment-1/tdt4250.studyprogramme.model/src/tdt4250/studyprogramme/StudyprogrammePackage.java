@@ -42,7 +42,7 @@ public interface StudyprogrammePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/tdt4250.studyprogramme/model/studyprogramme.ecore";
+	String eNS_URI = "platform:/plugin/tdt4250.studyprogramme.model/model/studyprogramme.ecore";
 
 	/**
 	 * The package namespace name.
@@ -403,13 +403,22 @@ public interface StudyprogrammePackage extends EPackage {
 	int COURSE_COMBINATION__CREDITS_REQUIREMENT = 2;
 
 	/**
+	 * The feature id for the '<em><b>From Term</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_COMBINATION__FROM_TERM = 3;
+
+	/**
 	 * The feature id for the '<em><b>Course Combinations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_COMBINATION__COURSE_COMBINATIONS = 3;
+	int COURSE_COMBINATION__COURSE_COMBINATIONS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Course Groups</b></em>' containment reference list.
@@ -418,7 +427,7 @@ public interface StudyprogrammePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_COMBINATION__COURSE_GROUPS = 4;
+	int COURSE_COMBINATION__COURSE_GROUPS = 5;
 
 	/**
 	 * The number of structural features of the '<em>Course Combination</em>' class.
@@ -427,7 +436,7 @@ public interface StudyprogrammePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_COMBINATION_FEATURE_COUNT = 5;
+	int COURSE_COMBINATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Course Combination</em>' class.
@@ -1110,6 +1119,17 @@ public interface StudyprogrammePackage extends EPackage {
 	EAttribute getCourseCombination_CreditsRequirement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tdt4250.studyprogramme.CourseCombination#getFromTerm <em>From Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>From Term</em>'.
+	 * @see tdt4250.studyprogramme.CourseCombination#getFromTerm()
+	 * @see #getCourseCombination()
+	 * @generated
+	 */
+	EAttribute getCourseCombination_FromTerm();
+
+	/**
 	 * Returns the meta object for class '{@link tdt4250.studyprogramme.CourseLevelCriterion <em>Course Level Criterion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1579,6 +1599,14 @@ public interface StudyprogrammePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COURSE_COMBINATION__CREDITS_REQUIREMENT = eINSTANCE.getCourseCombination_CreditsRequirement();
+
+		/**
+		 * The meta object literal for the '<em><b>From Term</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COURSE_COMBINATION__FROM_TERM = eINSTANCE.getCourseCombination_FromTerm();
 
 		/**
 		 * The meta object literal for the '{@link tdt4250.studyprogramme.impl.CourseLevelCriterionImpl <em>Course Level Criterion</em>}' class.

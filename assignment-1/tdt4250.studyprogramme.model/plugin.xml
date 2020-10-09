@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated studyprogramme -->
       <package
-            uri="platform:/plugin/tdt4250.studyprogramme/model/studyprogramme.ecore"
+            uri="platform:/plugin/tdt4250.studyprogramme.model/model/studyprogramme.ecore"
             class="tdt4250.studyprogramme.StudyprogrammePackage"
             genModel="model/studyprogramme.genmodel"/>
    </extension>
@@ -20,5 +20,4 @@
             type="studyprogramme"
             class="tdt4250.studyprogramme.util.StudyprogrammeResourceFactoryImpl"/>
    </extension>
-
 </plugin>

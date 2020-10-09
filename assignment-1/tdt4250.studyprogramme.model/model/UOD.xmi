@@ -3,8 +3,8 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:studyprogramme="platform:/plugin/tdt4250.studyprogramme/model/studyprogramme.ecore"
-    xsi:schemaLocation="platform:/plugin/tdt4250.studyprogramme/model/studyprogramme.ecore studyprogramme.ecore">
+    xmlns:studyprogramme="platform:/plugin/tdt4250.studyprogramme.model/model/studyprogramme.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250.studyprogramme.model/model/studyprogramme.ecore studyprogramme.ecore">
   <programmes
       name="Computer Science"
       code="MIDT"
@@ -16,10 +16,12 @@
       <courseCombinations
           name="Specialisation - Software Systems"
           specialisation="//@programmes.0/@specialisations.0"
-          creditsRequirement="120.0">
+          creditsRequirement="120.0"
+          fromTerm="1">
         <courseCombinations
             name="Mandatory and elective courses - 1. year"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="1">
           <courseGroups
               fromTerm="1"
               toTerm="1"
@@ -58,9 +60,10 @@
         </courseCombinations>
         <courseCombinations
             name="Engineer course other study programme - 1. year"
-            creditsRequirement="7.5">
+            creditsRequirement="7.5"
+            fromTerm="1">
           <courseGroups
-              fromTerm="1"
+              fromTerm="2"
               toTerm="2"
               status="elective"
               requiredCredits="7.5">
@@ -71,7 +74,8 @@
         </courseCombinations>
         <courseCombinations
             name="Complementary courses - 2. year"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
@@ -85,8 +89,9 @@
           </courseGroups>
         </courseCombinations>
         <courseCombinations
-            name="Fordypningsemner og masteroppgave"
-            creditsRequirement="30.0">
+            name="Specialisation courses and master thesis"
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
@@ -107,12 +112,13 @@
       </courseCombinations>
       <courseCombinations
           name="Specialisation - Artificial Intelligence"
-          specialisation="//@programmes.0/@specialisations.1"
-          creditsRequirement="120.0">
+          specialisation="//@programmes.0/@specialisations.2"
+          creditsRequirement="120.0"
+          fromTerm="1">
         <courseCombinations
             name="Mandatory and elective courses - 1. year"
-            specialisation="//@programmes.0/@specialisations.1"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="1">
           <courseGroups
               fromTerm="1"
               toTerm="1"
@@ -124,9 +130,10 @@
         </courseCombinations>
         <courseCombinations
             name="Engineer course other study programme - 1. year"
-            creditsRequirement="7.5">
+            creditsRequirement="7.5"
+            fromTerm="1">
           <courseGroups
-              fromTerm="1"
+              fromTerm="2"
               toTerm="2"
               status="elective"
               requiredCredits="7.5">
@@ -137,7 +144,8 @@
         </courseCombinations>
         <courseCombinations
             name="Complementary courses - 2. year"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
@@ -151,8 +159,9 @@
           </courseGroups>
         </courseCombinations>
         <courseCombinations
-            name="Fordypningsemner og masteroppgave"
-            creditsRequirement="30.0">
+            name="Specialisation courses and master thesis"
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
@@ -174,11 +183,12 @@
       <courseCombinations
           name="Specialisation - Algorithms and Computers"
           specialisation="//@programmes.0/@specialisations.1"
-          creditsRequirement="120.0">
+          creditsRequirement="120.0"
+          fromTerm="1">
         <courseCombinations
             name="Mandatory and elective courses - 1. year"
-            specialisation="//@programmes.0/@specialisations.1"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="1">
           <courseGroups
               fromTerm="1"
               toTerm="1"
@@ -190,20 +200,22 @@
         </courseCombinations>
         <courseCombinations
             name="Engineer course other study programme - 1. year"
-            creditsRequirement="7.5">
+            creditsRequirement="7.5"
+            fromTerm="1">
           <courseGroups
-              fromTerm="1"
+              fromTerm="2"
               toTerm="2"
               status="elective"
               requiredCredits="7.5">
             <criteria
                 xsi:type="studyprogramme:CourseCriterion"
-                courses="//@courses.9 //@courses.10 //@courses.11 //@courses.12 //@courses.13 //@courses.14 //@courses.15 //@courses.16 //@courses.17 //@courses.18"/>
+                courses="//@courses.18 //@courses.17 //@courses.16 //@courses.15 //@courses.14 //@courses.13 //@courses.12 //@courses.11 //@courses.10 //@courses.9"/>
           </courseGroups>
         </courseCombinations>
         <courseCombinations
             name="Complementary courses - 2. year"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
@@ -217,15 +229,16 @@
           </courseGroups>
         </courseCombinations>
         <courseCombinations
-            name="Fordypningsemner og masteroppgave"
-            creditsRequirement="30.0">
+            name="Specialisation courses and master thesis"
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
               requiredCredits="30.0">
             <criteria
                 xsi:type="studyprogramme:CourseCriterion"
-                courses="//@courses.24 //@courses.25"/>
+                courses="//@courses.25 //@courses.24"/>
           </courseGroups>
           <courseGroups
               fromTerm="4"
@@ -240,11 +253,12 @@
       <courseCombinations
           name="Specialisation - Databases and Search"
           specialisation="//@programmes.0/@specialisations.3"
-          creditsRequirement="120.0">
+          creditsRequirement="120.0"
+          fromTerm="1">
         <courseCombinations
             name="Mandatory and elective courses - 1. year"
-            specialisation="//@programmes.0/@specialisations.1"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="1">
           <courseGroups
               fromTerm="1"
               toTerm="1"
@@ -256,20 +270,22 @@
         </courseCombinations>
         <courseCombinations
             name="Engineer course other study programme - 1. year"
-            creditsRequirement="7.5">
+            creditsRequirement="7.5"
+            fromTerm="1">
           <courseGroups
-              fromTerm="1"
+              fromTerm="2"
               toTerm="2"
               status="elective"
               requiredCredits="7.5">
             <criteria
                 xsi:type="studyprogramme:CourseCriterion"
-                courses="//@courses.9 //@courses.10 //@courses.11 //@courses.12 //@courses.13 //@courses.14 //@courses.15 //@courses.16 //@courses.17 //@courses.18"/>
+                courses="//@courses.18 //@courses.17 //@courses.16 //@courses.15 //@courses.14 //@courses.13 //@courses.12 //@courses.11 //@courses.10 //@courses.9"/>
           </courseGroups>
         </courseCombinations>
         <courseCombinations
             name="Complementary courses - 2. year"
-            creditsRequirement="30.0">
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
@@ -282,15 +298,16 @@
           </courseGroups>
         </courseCombinations>
         <courseCombinations
-            name="Fordypningsemner og masteroppgave"
-            creditsRequirement="30.0">
+            name="Specialisation courses and master thesis"
+            creditsRequirement="30.0"
+            fromTerm="3">
           <courseGroups
               fromTerm="3"
               toTerm="3"
               requiredCredits="30.0">
             <criteria
                 xsi:type="studyprogramme:CourseCriterion"
-                courses="//@courses.24 //@courses.25"/>
+                courses="//@courses.25 //@courses.24"/>
           </courseGroups>
           <courseGroups
               fromTerm="4"
@@ -311,6 +328,15 @@
         specialisation="Artificial Intelligence"/>
     <specialisations
         specialisation="Databases and Search"/>
+  </programmes>
+  <programmes
+      name="Master of Science in Informatics"
+      code="MSIT"
+      length="2"
+      creditsRequirement="120.0">
+    <academicYears
+        fromYear="2020"
+        fromSeason="autumn"/>
   </programmes>
   <courses courseCriterion="//@programmes.0/@academicYears.0/@courseCombinations.0/@courseCombinations.0/@courseGroups.0/@criteria.0"
       name="Informasjonssystemer"
@@ -444,6 +470,7 @@
   <courses courseCriterion="//@programmes.0/@academicYears.0/@courseCombinations.3/@courseCombinations.3/@courseGroups.1/@criteria.0 //@programmes.0/@academicYears.0/@courseCombinations.0/@courseCombinations.3/@courseGroups.1/@criteria.0 //@programmes.0/@academicYears.0/@courseCombinations.1/@courseCombinations.3/@courseGroups.1/@criteria.0 //@programmes.0/@academicYears.0/@courseCombinations.2/@courseCombinations.3/@courseGroups.1/@criteria.0"
       name="Datateknologi, masteroppgave"
       credits="30.0"
+      level="advancedCourses"
       code="TDT4900"/>
   <courses courseCriterion="//@programmes.0/@academicYears.0/@courseCombinations.1/@courseCombinations.2/@courseGroups.0/@criteria.0 //@programmes.0/@academicYears.0/@courseCombinations.0/@courseCombinations.2/@courseGroups.0/@criteria.0 //@programmes.0/@academicYears.0/@courseCombinations.2/@courseCombinations.2/@courseGroups.0/@criteria.0"
       name="Arkitektur som teknologisk praksis"
