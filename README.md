@@ -7,4 +7,4 @@ Model for study programmes.
 
 ## [Assignment 2](assignment-2/)
 
-Model-to-text (M2T) transformation of [studyprogrammes model](../tdt4250/assignment-1/tdt4250.studyprogramme.model/README.md) instance.
+Model-to-text (M2T) transformation of [studyprogrammes model](assignment-1/tdt4250.studyprogramme.model/) instance.
