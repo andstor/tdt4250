@@ -2,7 +2,7 @@
 
 ## Structure
 
-tdt4250.studyprogramme.html - Model-to-text (M2T) transformation of [studyprogrammes model](../../tdt4250/assignment-1/tdt4250.studyprogramme.model/README.md) instance.
+[tdt4250.studyprogramme.html](tdt4250.studyprogramme.html/) - Model-to-text (M2T) transformation of [studyprogrammes model](../assignment-1/tdt4250.studyprogramme.model/) instance.
 
 ## Assignment description
 

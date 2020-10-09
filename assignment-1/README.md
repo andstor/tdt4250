@@ -2,7 +2,7 @@
 
 ## Structure
 
-tdt4250.studyprogramme - Model for study programmes
+[tdt4250.studyprogramme.model](tdt4250.studyprogramme.model/) - Model for study programmes
 
 ## Assignment description
 

@@ -16,7 +16,7 @@ This project uses an instance of the [studyprogramme model](../../assignment-1/t
 
 ## Sample Output
 
-A sample output of the transformation can be found and opened directly in your browser [here]().
+A sample output of the transformation can be found and opened directly in your browser [here](https://andstor.github.io/tdt4250/programmes.html).
 
 ## Project Structure
 
@@ -29,8 +29,7 @@ The `src` folder contains all the Acceleo related files and folders. Three Java 
 [`Activator.java`](src/tdt4250/studyprogramme/html/Activator.java) Is a generated file that controls the plug-in life cycle.
 
 #### [tdt4250/studyprogramme/html/main](src/tdt4250/studyprogramme/html/main/)
-[`Generate.java`](src/tdt4250/studyprogramme/html/main/
-Generate.java)  Provides the main entry point of the 'Generate' generation module.
+[`Generate.java`](src/tdt4250/studyprogramme/html/main/Generate.java)  Provides the main entry point of the 'Generate' generation module.
 
 [`generate.mtl`](src/tdt4250/studyprogramme/html/main/generate.mtl) Is the main template used for the model-to-text (m2t) transformation. Most of the "relevant" m2t code is located in this file.
 
@@ -54,17 +53,17 @@ You should already have Eclipse installed, with the Acceleo SDK installed.
 
 ![Eclipse workspace](assets/import-projects.png)
 
-1. Right-click the `tdt4250.studyprogram.html` module and select `Run Configurations...` under `Run As`.
+2. Right-click the `tdt4250.studyprogramme.html` module and select `Run Configurations...` under `Run As`.
 
 ![Run Configurations](assets/right-click-run-configuration.png)
 
-1. In the popup window, right-click `Acceleo Application` and select `New Configuration`  in order to create a new runnable Acceleo configuration.
+3. In the popup window, right-click `Acceleo Application` and select `New Configuration`  in order to create a new runnable Acceleo configuration.
 
 ![Acceleo Runner](assets/right-click-acceleo-application.png)
 
-1. Enter the following configuration options as shown in the image below:
+4. Enter the following configuration options as shown in the image below:
 ![Acceleo Run Options](assets/acceleo-run-configuration.png)
 
-1. Click `Run` to run the transformation.
+5. Click `Run` to run the transformation.
 
-2. Output files will be available in the `src-gen` folder in the module.
+6. Output files will be available in the `src-gen` folder in the module.
