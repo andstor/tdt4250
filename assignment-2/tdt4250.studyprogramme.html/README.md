@@ -29,8 +29,7 @@ The `src` folder contains all the Acceleo related files and folders. Three Java 
 [`Activator.java`](src/tdt4250/studyprogramme/html/Activator.java) Is a generated file that controls the plug-in life cycle.
 
 #### [tdt4250/studyprogramme/html/main](src/tdt4250/studyprogramme/html/main/)
-[`Generate.java`](src/tdt4250/studyprogramme/html/main/
-Generate.java)  Provides the main entry point of the 'Generate' generation module.
+[`Generate.java`](src/tdt4250/studyprogramme/html/main/Generate.java)  Provides the main entry point of the 'Generate' generation module.
 
 [`generate.mtl`](src/tdt4250/studyprogramme/html/main/generate.mtl) Is the main template used for the model-to-text (m2t) transformation. Most of the "relevant" m2t code is located in this file.
 
