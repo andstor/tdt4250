@@ -53,7 +53,7 @@ You should already have Eclipse installed, with the Acceleo SDK installed.
 
 ![Eclipse workspace](assets/import-projects.png)
 
-2. Right-click the `tdt4250.studyprogram.html` module and select `Run Configurations...` under `Run As`.
+2. Right-click the `tdt4250.studyprogramme.html` module and select `Run Configurations...` under `Run As`.
 
 ![Run Configurations](assets/right-click-run-configuration.png)
 
