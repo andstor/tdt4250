@@ -16,7 +16,7 @@ This project uses an instance of the [studyprogramme model](../../assignment-1/t
 
 ## Sample Output
 
-A sample output of the transformation can be found and opened directly in your browser [here](https://andstor.github.io/tdt4250/programmes.htmls).
+A sample output of the transformation can be found and opened directly in your browser [here](https://andstor.github.io/tdt4250/programmes.html).
 
 ## Project Structure
 
