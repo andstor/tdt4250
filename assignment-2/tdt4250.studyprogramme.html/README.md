@@ -53,17 +53,17 @@ You should already have Eclipse installed, with the Acceleo SDK installed.
 
 ![Eclipse workspace](assets/import-projects.png)
 
-1. Right-click the `tdt4250.studyprogram.html` module and select `Run Configurations...` under `Run As`.
+2. Right-click the `tdt4250.studyprogram.html` module and select `Run Configurations...` under `Run As`.
 
 ![Run Configurations](assets/right-click-run-configuration.png)
 
-1. In the popup window, right-click `Acceleo Application` and select `New Configuration`  in order to create a new runnable Acceleo configuration.
+3. In the popup window, right-click `Acceleo Application` and select `New Configuration`  in order to create a new runnable Acceleo configuration.
 
 ![Acceleo Runner](assets/right-click-acceleo-application.png)
 
-1. Enter the following configuration options as shown in the image below:
+4. Enter the following configuration options as shown in the image below:
 ![Acceleo Run Options](assets/acceleo-run-configuration.png)
 
-1. Click `Run` to run the transformation.
+5. Click `Run` to run the transformation.
 
-2. Output files will be available in the `src-gen` folder in the module.
+6. Output files will be available in the `src-gen` folder in the module.
