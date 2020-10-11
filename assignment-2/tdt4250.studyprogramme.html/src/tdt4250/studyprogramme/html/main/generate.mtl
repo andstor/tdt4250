@@ -41,6 +41,13 @@
 		$( document ).ready(function() {
 			$('.selectpicker.specialisation').on('change', function(){
 				let selectedID = $(this).val();
+				
+				let year = $(this).closest('.year')
+				year.siblings('.year').removeClass("collapse");
+				year.removeClass("collapse");
+				year.nextAll('.year').addClass("collapse");
+				if (selectedID != "null") year.next('.year').removeClass("collapse");
+				
 				let specialisations = $(this).closest('.study_programme').find('.specialisation');
 				specialisations.addClass("collapse");
 				let selectedSpesialisation = specialisations.each(function(elem){
@@ -48,6 +55,17 @@
 						$(this).removeClass("collapse");			
 					}; 	
 				});
+			})
+
+			$('.selectpicker.academic_year').on('change', function(){
+				let selectedID = $(this).val();
+				let academicYears = $(this).closest('.study_programme').find('.academic_year');
+				academicYears.addClass("collapse");
+				let selectedAcademicYear = academicYears.each(function(elem){
+				    if($(this).attr('id') == selectedID) {
+						$(this).removeClass("collapse");			
+					}; 	
+				});				
 			})
 		});
 	</script>
@@ -68,6 +86,15 @@
 <div class="study_programme mb-5">
 	<h1>[programme.name/] ([programme.code/])</h1>
 	<hr/>
+
+	<h2 class="d-inline">Class of </h2>
+	<select class="academic_year selectpicker" data-live-search="true" data-style="spes-select btn-light">
+		<option value="null">Select academic year</option>
+		[for (academicYear: AcademicYear | programme.academicYears)]
+			<option value="[getNameID(academicYear.oclAsType(EObject))/]">[academicYear.fromYear/]</option>
+		[/for]
+	</select>
+
 	[for (academicYear: AcademicYear | programme.academicYears)]
 		[generate(academicYear)/]
 	[/for]
@@ -75,31 +102,40 @@
 [/template]
 
 [template public generate(academicYear: AcademicYear)]
-<div class="academic_year">
-	<h2 class="mt-5">Class of [academicYear.fromYear/]</h2>
-
+<div class="academic_year collapse" id="[getNameID(academicYear.oclAsType(EObject))/]">
 	[for (year : Integer | getCourseCombinationYears(academicYear.courseCombinations))]
-		<h2 class="mt-5">[year/]. Year</h2>
-
-		[if (childrenContainsSpecialisation(filterCourseCombinationsByYear(academicYear.courseCombinations, year)))]		
-		<select class="mt-3 specialisation selectpicker" data-live-search="true" data-style="spes-select btn-light" data-width="100%">
-			<option>Select specialisation</option>
-		[/if]
-			[for (courseCombination: CourseCombination | getCourseCombinationsByFromYear(academicYear.courseCombinations, year))]
-				[if (courseCombination.specialisation->notEmpty() and isTermInYear(courseCombination.fromTerm, year))]
-				<option value="[getNameID(courseCombination.oclAsType(EObject))/]">[courseCombination.specialisation.specialisation/]</option>
-				[/if]
-			[/for]
-		[if (childrenContainsSpecialisation(filterCourseCombinationsByYear(academicYear.courseCombinations, year)))]
-		</select>
-		[/if]
-
-		[for (courseCombination: CourseCombination | getCourseCombinationsByFromYear(academicYear.courseCombinations, year))]
-			[generate(courseCombination, year)/]
-		[/for]
+		[generateYear(year, academicYear.courseCombinations)/]
 	[/for]
 </div>
 [/template]
+
+[template public generateYear(year : Integer, courseCombinations: OrderedSet(CourseCombination),)]
+[if (year = 1)]
+	<div class="year">
+[else]
+	<div class="year collapse">
+[/if]
+	<h2 class="mt-5">[year/]. Year</h2>
+
+	[if (containsSpecialisation(filterCourseCombinationsByFromYear(courseCombinations, year)))]		
+	<select class="mt-3 specialisation selectpicker" data-live-search="true" data-style="spes-select btn-light" data-width="100%">
+		<option value="null">Select specialisation</option>
+	[/if]
+		[for (courseCombination: CourseCombination | getCourseCombinationsByFromYear(courseCombinations, year))]
+			[if (courseCombination.specialisation->notEmpty() and isTermInYear(courseCombination.fromTerm, year))]
+				<option value="[getNameID(courseCombination.oclAsType(EObject))/]">[courseCombination.specialisation.specialisation/]</option>
+			[/if]
+		[/for]
+	[if (containsSpecialisation(filterCourseCombinationsByFromYear(courseCombinations, year)))]
+	</select>
+	[/if]
+
+	[for (courseCombination: CourseCombination | getCourseCombinationsByFromYear(courseCombinations, year))]
+		[generate(courseCombination, year)/]
+	[/for]
+</div>
+[/template]
+
 
 [template public generate(courseCombination: CourseCombination, year : Integer) ? (courseCombination.specialisation->notEmpty())
 	{
@@ -107,7 +143,7 @@
 		 
 	}] 
 <div class="collapse specialisation" id="[getNameID(courseCombination.oclAsType(EObject))/]">
-	[for (term: Integer | getCourseCombinationTerms(filterCourseCombinationsByYear(courseCombination.courseCombinations, year)))]	
+	[for (term: Integer | getCourseCombinationTerms(filterCourseCombinationsByFromYear(courseCombination.courseCombinations, year)))]	
 		<div class="mt-5 text-muted row">
 			<div class="col">
 				<h3>[getSeason(seasonOffset, term).toString().toUpperFirst()/]</h3>
@@ -172,7 +208,7 @@
 	courseCombinations->select(cc | yearToTerm(year)->any(y | y >= cc.fromTerm) <> null )
 /]
 
-[query public filterCourseCombinationsByYear(courseCombinations : OrderedSet(CourseCombination), year : Integer) : OrderedSet(CourseCombination) =
+[query public filterCourseCombinationsByFromYear(courseCombinations : OrderedSet(CourseCombination), year : Integer) : OrderedSet(CourseCombination) =
 	courseCombinations->select(cc | yearToTerm(year)->any(y | y = cc.fromTerm) <> null )
 /]
 
@@ -180,6 +216,6 @@
 	yearToTerm(year)->any(y | term->includes(y)) <> null
 /]
 
-[query public childrenContainsSpecialisation(courseCombination : OrderedSet(CourseCombination)) : Boolean =
+[query public containsSpecialisation(courseCombination : OrderedSet(CourseCombination)) : Boolean =
 	courseCombination->select(cc | cc.specialisation->notEmpty())->notEmpty()
 /]
