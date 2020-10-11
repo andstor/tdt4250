@@ -89,7 +89,7 @@
 
 	<h2 class="d-inline">Class of </h2>
 	<select class="academic_year selectpicker" data-live-search="true" data-style="spes-select btn-light">
-		<option value="null">Select academic year</option>
+		<option value="null">Select year</option>
 		[for (academicYear: AcademicYear | programme.academicYears)]
 			<option value="[getNameID(academicYear.oclAsType(EObject))/]">[academicYear.fromYear/]</option>
 		[/for]
